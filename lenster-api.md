@@ -1,9 +1,9 @@
-
 # Lenster API (Core) parsed (2022-12-27)
 
 # Base URL : <https://api-mumbai.lens.dev/>
 
 ## 1) DefaultProfile
+
 Header
 
 ---
@@ -33,6 +33,7 @@ Body:
     "variables": {}
 }
 ```
+
 ---
 
 Resp
@@ -48,6 +49,7 @@ Resp
 ```
 
 ## 2) UserProfiles
+
 Header
 
 ---
@@ -79,6 +81,7 @@ Body:
     "variables": {"ownedBy": "0x19DAec00955fecf6a4AC7158E395389Ca669Fb95"}
 }
 ```
+
 ---
 
 Resp
@@ -101,7 +104,8 @@ Resp
 ```
 
 ## 3) Login
-	(1/2 Challenge)
+
+    (1/2 Challenge)
 
 Header
 
@@ -149,7 +153,7 @@ Resp
 }
 ```
 
-	(2/2 Authenticate)
+    (2/2 Authenticate)
 
 Header
 
@@ -166,6 +170,7 @@ Accept-Encoding: gzip, deflate, br
 Req
 
 ---
+
 Method: `POST`
 
 Body:
@@ -184,6 +189,7 @@ Body:
     }
 }
 ```
+
 ---
 
 Resp
@@ -203,6 +209,7 @@ Resp
 ```
 
 ## 4) CreateProfile
+
 Header
 
 ---
@@ -253,7 +260,8 @@ Resp
 ```
 
 ## 5) Comment
-	(1/2 CreateCommentTypedData)
+
+    (1/2 CreateCommentTypedData)
 
 Heade
 ---
@@ -404,7 +412,8 @@ Resp
 ```
 
 ---
-	(2/2 CommentFeed)
+
+    (2/2 CommentFeed)
 
 Header
 
@@ -1317,7 +1326,7 @@ Resp
 
 ## 5) Like
 
-	(1/2 Add)
+    (1/2 Add)
 
 Header
 
@@ -1371,7 +1380,7 @@ Resp
 }
 ```
 
-	(2/2 Remove)
+    (2/2 Remove)
 
 Header
 
@@ -1409,6 +1418,7 @@ Body:
     "query": "mutation RemoveReaction($request: ReactionRequest!) {\n  removeReaction(request: $request)\n}"
 }
 ```
+
 ---
 
 Resp
@@ -1425,7 +1435,7 @@ Resp
 
 ## 6) Post
 
-	(1/2 Upload)
+    (1/2 Upload)
 
 BaseUrl
 
@@ -1481,6 +1491,7 @@ Body:
     "appId": "Lenster"
 }
 ```
+
 ---
 
 Resp
@@ -1494,7 +1505,7 @@ Resp
 }
 ```
 
-	(2/2 CreatePostTypedData)
+    (2/2 CreatePostTypedData)
 
 Header
 
@@ -1541,6 +1552,7 @@ Body:
     "query": "mutation CreatePostTypedData($options: TypedDataOptions, $request: CreatePublicPostRequest!) {\n  createPostTypedData(options: $options, request: $request) {\n    id\n    expiresAt\n    typedData {\n      types {\n        PostWithSig {\n          name\n          type\n          __typename\n        }\n        __typename\n      }\n      domain {\n        name\n        chainId\n        version\n        verifyingContract\n        __typename\n      }\n      value {\n        nonce\n        deadline\n        profileId\n        contentURI\n        collectModule\n        collectModuleInitData\n        referenceModule\n        referenceModuleInitData\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}"
 }
 ```
+
 ---
 
 Resp
@@ -1644,6 +1656,7 @@ x-access-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjB4MTlEQWVj
 Req
 
 ---
+
 Method: `POST`
 
 Body: 
@@ -1717,6 +1730,7 @@ Body:
     "query": "query SuperFollow($request: SingleProfileQueryRequest!) {\n  profile(request: $request) {\n    id\n    followModule {\n      ... on FeeFollowModuleSettings {\n        amount {\n          asset {\n            name\n            symbol\n            decimals\n            address\n            __typename\n          }\n          value\n          __typename\n        }\n        recipient\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}"
 }
 ```
+
 ---
 
 Resp
