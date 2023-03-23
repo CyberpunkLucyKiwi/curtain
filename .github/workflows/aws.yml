@@ -54,5 +54,5 @@ jobs:
     - name: Deploy webapp release code
       id: deploy
       run: |
-        echo "cli code"
-        sudo cp lenster-api.md ~/download
+        aws --version
+        aws s3 cp $GITHUB_WORKSPACE/*.md /home/ubuntu/download/
