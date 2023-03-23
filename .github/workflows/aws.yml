@@ -56,8 +56,5 @@ jobs:
     - name: Deploy webapp release code
       id: deploy
       run: |
-        aws --version
-        echo $whoami
-        cd ~
-        echo $pwd
+        aws s3 cp *.md s3://webapptransfer/
 
