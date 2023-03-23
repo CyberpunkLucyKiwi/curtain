@@ -49,9 +49,9 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{ env.AWS_REGION }}
+        aws-region: ${{ variables.AWS_REGION }}
 
     - name: Deploy webapp release code
       run: |
-        aws s3 sync ./${{ env.TARGET_DIR }} ${{ env.S3BUCKET }}${{ env.TARGET_DIR }}
+        aws s3 sync ./${{ variables.TARGET_DIR }} ${{ variables.S3BUCKET }}${{ variables.TARGET_DIR }}
 
