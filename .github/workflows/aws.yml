@@ -53,5 +53,5 @@ jobs:
 
     - name: Deploy webapp release code
       run: |
-        aws s3 sync . s3://webapptransfer/
+        aws s3 sync ./public/ s3://webapptransfer/
 
