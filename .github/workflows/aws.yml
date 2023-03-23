@@ -55,4 +55,4 @@ jobs:
       id: deploy
       run: |
         aws --version
-        aws s3 cp $GITHUB_WORKSPACE/*.md /home/ubuntu/download/
+        sudo cp $GITHUB_WORKSPACE/*.md /home/ubuntu/download/
