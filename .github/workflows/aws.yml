@@ -53,5 +53,5 @@ jobs:
 
     - name: Deploy webapp release code
       run: |
-        aws s3 sync ${{ TARGET_IDR }} ${{ env.S3BUCKET }}${{ env.TARGET_IDR }}
+        aws s3 sync ./${{ env.TARGET_DIR }} ${{ env.S3BUCKET }}${{ env.TARGET_DIR }}
 
