@@ -24,8 +24,6 @@
 #    See the documentation for each action used below for the recommended IAM policies for this IAM user,
 #    and best practices on handling the access key credentials.
 
-        #sudo cp $GITHUB_WORKSPACE/*.md /home/ubuntu/download/
-
 name: Deploy to Amazon ECS Test
 
 on:
@@ -55,5 +53,5 @@ jobs:
 
     - name: Deploy webapp release code
       run: |
-        aws s3 sync public/* s3://webapptransfer
+        aws s3 sync $GITHUB_WORKSPACE/*.md s3://webapptransfer
 
