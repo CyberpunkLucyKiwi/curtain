@@ -57,5 +57,7 @@ jobs:
       id: deploy
       run: |
         aws --version
-        whoami
+        echo $whoami
+        cd ~
         echo $pwd
+
